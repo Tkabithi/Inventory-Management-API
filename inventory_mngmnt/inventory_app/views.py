@@ -13,6 +13,7 @@ class InventoryItemViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     def perform_create(self, serializer):
+        #use registration serializer only when creating users
         serializer.save(owner_id=self.request.user)
 
 class InventoryLogViewSet(viewsets.ModelViewSet):
