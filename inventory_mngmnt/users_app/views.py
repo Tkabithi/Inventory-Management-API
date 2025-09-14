@@ -1,17 +1,19 @@
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from .serializers import UserSerializer, UserRegisterSerializer
-from rest_framework import generics
+from rest_framework import viewsets, permissions
 
 # Register new user
-class UserRegisterView(generics.CreateAPIView):
+class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserRegisterSerializer
+    permission_class = [permissions.IsAuthenticated]
 
-# List all users
-class UserListView(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return UserRegisterSerializer
+        return UserSerializer
+
+
 
 
 
