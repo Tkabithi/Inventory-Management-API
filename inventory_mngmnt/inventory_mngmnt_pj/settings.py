@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users_app',
     'inventory_app',
     'rest_framework',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
