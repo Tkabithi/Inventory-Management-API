@@ -23,7 +23,7 @@ class InventoryLog(models.Model):
     
     item = models.ForeignKey(InventoryItem, on_delete=models.CASCADE,related_name='logs')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'logs')
-    action = models. CharField(max_length=50)
+    action = models. CharField(max_length=50, choices=ACTION_CHOICES)
     old_quantity = models.PositiveIntegerField(null=True, blank=True)
     new_quantity = models.PositiveIntegerField()
     timestamp = models.DateTimeField(auto_now_add=True) 

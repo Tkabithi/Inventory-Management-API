@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import InventoryItem, InventoryLog
 from .serializers import InventoryItemSerializer,InventoryLogSerializer
 from rest_framework import viewsets, permissions
+from rest_framework.permissions import IsAuthenticated
+
 
 
 class InventoryItemViewSet(viewsets.ModelViewSet):
