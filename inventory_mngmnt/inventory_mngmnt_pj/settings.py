@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users_app',
+    'inventory_app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'inventory_mngmnt.urls'
+ROOT_URLCONF = 'inventory_mngmnt_pj.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'inventory_mngmnt.wsgi.application'
+WSGI_APPLICATION = 'inventory_mngmnt_pj.wsgi.application'
 
 
 # Database
